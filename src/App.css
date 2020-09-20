@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+* :focus {
+    outline: none
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    flex: 1;
+    display: flex;
+    height: 100vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar {
+    flex: 1;
+    background-color: #1e242e;
+    display: flex;
+    flex-direction: column;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.profile-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fdfdfd;
+    border-bottom: 1px solid #374257;
+    margin: 0 auto;
+    width: 85%;
+    font-size: 1.25em;
+    text-shadow: 0px 0px 5px #407cc0;
 }
-
-.App-link {
-  color: #61dafb;
+.username {
+    margin-left: 0.5vw;
+    color: #3b7be9;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-links {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    list-style-type: none;
+}
+.nav-link {
+    margin: 3vh 0vh 3vh 0vh;
+    padding: 1.5vh;
+    width: 85%;
+}
+.link {
+    text-decoration: none;
+    color: #fdfdfd;
+}
+.logout-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #374257;
+    margin: 0 auto;
+    width: 85%
+}
+.btn {
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    width: 10vw;
+    height: 6vh;
+    font-size: 0.85em;
+    border: none;
+    border-radius: 1vh;
+}
+.logout-btn {
+    border: 2px solid #3b7be9;
+    border-radius: 5vh;
+    background-color: transparent;
+    color: #dbdbdb;
+}
+.component-container {
+    flex: 5;
+    padding-left: 2.5vw;
+}
+.component-header {
+    border-bottom: 0.25vh solid #c2c2c2c2;
+}
+.component-title {
+    color: #345ca0;
+    font-weight: 400;
+}
+.component-subtitle {
+    font-style: italic;
+    color: #384150;
 }
