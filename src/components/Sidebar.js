@@ -1,8 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import Axios from 'axios'
 
-export default function Sidebar() {
+const apiURI = "http://localhost:8000"
+
+export default function Sidebar({history}) {
+
+    Axios.get(`${apiURI}/check`, {withCredentials: true})
+    .then(response => {
+        if (response.data === false) {
+            history.push('/')
+        }
+    })
+    .catch(error => {
+        history.push('/')
+        throw error
+    })
 
     const linkVariants = {
         "hover": {
@@ -26,6 +40,53 @@ export default function Sidebar() {
             }
         }
     }
+    const links = [
+        {
+            title: "Dashboard",
+            url: "/dashboard"
+        },
+        {
+            title: "Courses",
+            url: "/dashboard/courses"
+        },
+        {
+            title: "Students",
+            url: "/dashboard/students"
+        },
+        {
+            title: "Attendances",
+            url: "/dashboard/attendances"
+        }
+    ]
+
+    function handleLogout(event) {
+        event.preventDefault()
+
+        Axios.get(`${apiURI}/logout`, {withCredentials: true})
+        .then(response => {
+            console.log(response.data)
+            history.push('/')
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+    function renderLinks() {
+
+        return links.map((item, index) => {
+            return (
+            <motion.li
+                className = "nav-link"
+                variants = {linkVariants}
+                whileHover = "hover"
+                key = {index}
+            >
+                <Link className="link" to = {item.url}>{item.title}</Link>
+            </motion.li>
+            )
+        })
+    }
 
     return (
         <motion.nav className = "sidebar"
@@ -37,30 +98,18 @@ export default function Sidebar() {
                 How'dy <span className="username">kevin8283</span> 
             </div>
             <ul className="nav-links">
-                <motion.li className="nav-link"
-                    variants = {linkVariants}
-                    whileHover = "hover" 
-                ><Link className="link" to = "/dashboard">Dashboard</Link></motion.li>
-                <motion.li className="nav-link"
-                    variants = {linkVariants}
-                    whileHover = "hover" 
-                ><Link className="link" to = "/dashboard/courses">Courses</Link></motion.li>
-                <motion.li className="nav-link"
-                    variants = {linkVariants}
-                    whileHover = "hover" 
-                ><Link className="link" to = "/dashboard/students">Students</Link></motion.li>
-                <motion.li className="nav-link"
-                    variants = {linkVariants}
-                    whileHover = "hover" 
-                ><Link className="link" to = "/dashboard/attendances">Attendances</Link></motion.li>
+               {renderLinks()}
             </ul>
             <div className="logout-container">
-                <motion.button className = "btn logout-btn"
-                    variants = {buttonVariants}
-                    whileHover = "hover"
-                >
-                    Logout
-                </motion.button>
+                <Link to = "/">
+                    <motion.button className = "btn logout-btn"
+                        variants = {buttonVariants}
+                        whileHover = "hover"
+                        onClick = {handleLogout}
+                    >
+                        Logout
+                    </motion.button>
+                </Link>
             </div>
         </motion.nav>
     )

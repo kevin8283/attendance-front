@@ -6,12 +6,16 @@ import Courses from './components/Courses'
 import Dashboard from './components/Dashboard'
 import Sidebar from './components/Sidebar'
 import Students from './components/Students'
+import Login from './components/Login'
 
 function App() {
   return (
     <Router>
       <div className="container">
-        <Sidebar />
+        <Switch>
+          <Route path = "/" exact component = {Login}/>
+          <Route path = "/dashboard" component = {Sidebar}/>
+        </Switch>
         <Switch>
           <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/dashboard/courses" component={Courses} />
