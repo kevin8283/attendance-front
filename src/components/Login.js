@@ -19,6 +19,19 @@ export default class Login extends Component {
         this.handleClick = this.handleClick.bind(this)
     }
 
+    componentDidMount() {
+        Axios.get(`${apiURI}/check`, {withCredentials: true})
+        .then(response => {
+            if (response.data) {
+                this.props.history.push('/dashboard')
+            }
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+    
+
     handleChange(event) {
         event.preventDefault()
 
