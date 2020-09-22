@@ -61,7 +61,7 @@ export default class AddCourse extends Component {
                 transition = {{duration: 0.5}}
             >
                 <div className = "form-container addcourse-form">
-                    <div className="login-title-container">
+                    <div className="login-title-container addcourse-title">
                         <h2 className = "addcourse-title">New course</h2>
                     </div>
                     <div className = "form-group">

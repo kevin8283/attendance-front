@@ -9,6 +9,9 @@ body {
     display: flex;
     height: 100vh;
 }
+
+/* Sidebar component */
+
 .sidebar {
     flex: 1;
     background-color: #1e242e;
@@ -74,6 +77,9 @@ body {
     background-color: transparent;
     color: #fdfdfd;
 }
+
+/* Common components */
+
 .component-container {
     flex: 5;
     padding-left: 2.5vw;
@@ -89,14 +95,9 @@ body {
     font-style: italic;
     color: #384150;
 }
-.loading {
-    margin-top: 30vh;
-    margin-left: 38vw;
-    width: 2vh;
-    height: 2vh;
-    background-color: #285db9;
-    border-radius: 50%;
-}
+
+/* Some additionnal navbar */
+
 .secondary-navbar {
     height: 10vh;
     border-bottom: 0.25vh solid #c2c2c2c2;
@@ -115,6 +116,9 @@ body {
     text-decoration: none;
     color: #345ca0;
 }
+
+/* Login form */
+
 .login-container {
     background: linear-gradient(#b7c2db, #799ad6);
     width: 100%;
@@ -195,6 +199,9 @@ body {
     width: 98%;
     margin-top: 1vh;
 }
+
+/* Course component */
+
 .courses-container {
     overflow-y: scroll;
     max-height: 100%;
@@ -270,6 +277,35 @@ body {
     background-color: #2f6eda;
     box-shadow: 0px 0px 5px #808080;
     color: #dddddd;
+}
+
+/* Attendance Component */
+
+.attendance-component {
+    height: 80vh;
+    margin-top: 2.5vh;
+}
+.attendance-table {
+    margin-top: 5vh;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    width: 95%;
+}
+.attendance-table td {
+    padding: 2.5vh;
+}
+.attendance-th {
+    font-weight: 500;
+    color: #447ee2;
+}
+.attendance-tr-head {
+    background-color: #252e3d;
+}
+.attendance-td {
+    border: 2px solid #c2c2c2c2;
+}
+.attendance-tr:nth-child(odd) {
+    background-color: #f0f0f0;
 }
 
 /* Scrollbars */
