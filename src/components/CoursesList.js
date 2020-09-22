@@ -6,15 +6,20 @@ export default class CoursesList extends React.Component {
 
     render() {
         return (
-            <div className = "courses-container">
+            <motion.div className = "courses-container"
+                initial = {{opacity :0}}
+                animate = {{opacity: 1}}
+                transition = {{duration: 0.5}}
+            >
                 <ul className="courses">
                     {
                         this.props.courses.map((item, index) => {
                             return (
-                                <AnimatePresence key = {index}>
                                     <motion.li className="course"
-                                        exit = {{y: 1000}}
-                                        transition = {{duration: 1}}
+                                        key = {index}
+                                        whileHover = {{
+                                            scale: 1.05,
+                                        }}
                                     >
                                         <Link to={`/courses/${item._id}`} className="course-link">
                                             <div className="course-name">{item.name}</div>
@@ -26,12 +31,11 @@ export default class CoursesList extends React.Component {
                                             <p className="course-delete-link" onClick={this.props.deleteCourse} id={item._id}>Delete</p>
                                         </div>
                                     </motion.li>
-                                </AnimatePresence>
                             )
                         })
                     }
                 </ul>
-            </div>
+            </motion.div>
         )
     }
 }

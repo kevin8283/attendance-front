@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link , Switch, Route } from 'react-router-dom'
 import CoursesList from './CoursesList'
+import AddCourse from './AddCourse'
 import axios from 'axios'
 
 const apiURI = "http://localhost:8000"
@@ -73,12 +74,15 @@ export default class Courses extends Component {
                             </li>
                         </ul>
                     </motion.nav>
-                    <motion.section className="component component-courses"
+                    <motion.section className="component"
                         initial = {{opacity: 0}}
                         animate = {{opacity: 1}}
                         transition = {{duration: 1}}
                     >
-                        <CoursesList courses = {this.state.courses} deleteCourse = {this.deleteCourse}/>
+                        <Switch>
+                            <Route path = "/dashboard/courses" exact render = {() => <CoursesList courses = {this.state.courses} deleteCourse = {this.deleteCourse}/>} />
+                            <Route path = "/dashboard/courses/add" component = {AddCourse} />
+                        </Switch>
                     </motion.section>
                 </main>
             </div>

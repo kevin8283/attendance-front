@@ -23,6 +23,7 @@ export default class Login extends Component {
         Axios.get(`${apiURI}/check`, {withCredentials: true})
         .then(response => {
             if (response.data) {
+                console.log(response.data)
                 this.props.history.push('/dashboard')
             }
         })
@@ -112,7 +113,7 @@ export default class Login extends Component {
                         />
                    </div>
                    {this.displayError()}
-                   <div className="form-group submit-btn-container">
+                   <div className="submit-btn-container">
                        <button className="btn submit-btn" onClick = {this.handleClick}>Sign in</button>
                    </div>
                </motion.div>
