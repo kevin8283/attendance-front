@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 
 export default class AttendancesList extends Component {
     render() {
-        console.log(this.props)
         return (
             <motion.div className="attendances"
                 initial = {{opacity: 0}}

@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 export default class DashboardList extends Component {
     render() {
         return (
-            <div className = "dashboard-list">
+            <motion.div className = "dashboard-list"
+                initial = {{opacity: 0}}
+                animate = {{opacity: 1}}
+                transition = {{duration: 1}}
+            >
                  <table className="attendance-table">
                     <thead>
                         <tr className="attendance-tr-head">
@@ -20,20 +25,20 @@ export default class DashboardList extends Component {
                                 return (
                                     <tr key={index} className = "attendance-tr">
                                         <td className="attendance-td">
-                                            <Link to = {`/dashboard/students`}>{item.name} {item.last_name}</Link>
+                                            <Link to = {`/dashboard/students`} className = "student-name">{item.name} {item.last_name}</Link>
                                         </td>
-                                        <td className="attendance-td">
+                                        <td className="attendance-td student-uid">
                                             {item.card_uid}
                                         </td>
-                                        <td className="attendance-td">{item.course}</td>
-                                        <td className="attendance-td">{new Date(item.date).toLocaleTimeString()}</td>
+                                        <td className="attendance-td student-course">{item.course}</td>
+                                        <td className="attendance-td student-arrival-time">{new Date(item.date).toLocaleTimeString()}</td>
                                     </tr>
                                 )
                             })
                         }
                     </tbody>
                 </table>
-            </div>
+            </motion.div>
         )
     }
 }

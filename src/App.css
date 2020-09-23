@@ -255,7 +255,8 @@ body {
 }
 .addcourse-form {
     background-color: #ffffff;
-    box-shadow: 0px 0px 2.5px #a1a2a3;
+    box-shadow: none;
+    border: 2px solid #c2c2c2c2;
     height: 90%;
 }
 .form-group {
@@ -306,6 +307,47 @@ body {
 }
 .attendance-tr:nth-child(odd) {
     background-color: #f0f0f0;
+}
+.student-name {
+    text-decoration: none;
+    font-weight: 500;
+    color: #181e29;
+}
+.student-uid {
+    font-weight: 500;
+    color: #332030;
+}
+.create-attendance {
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+}
+.form-create-attendance {
+    background-color: #ffffff;
+    border: 2px solid #c2c2c2c2;
+    width: 65%;
+    padding: 2.5vh;
+    height: 35vh;
+    border-radius: 1vh;
+}
+.create-attendance-group {
+    display: flex;
+}
+.create-attendance-select {
+    font-size: 1em;
+    color: #2a4268;
+    margin-left: auto;
+    margin-right: 2.5vw;
+    width: 30vw;
+    height: 6vh;
+    padding-left: 2.5vw;
+    border-radius: 1vh;
+    border: 2px solid #c7c7c7;
+    background-color: transparent;
+}
+.create-attendance-option {
+    padding: 2.5vh;
 }
 
 /* Scrollbars */
