@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 
-const apiURI = "http://localhost:8000"
+const apiURI = "http://localhost:8080"
 
 export default class CreateAttendance extends Component {
     constructor(props) {

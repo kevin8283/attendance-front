@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import DashboardList from './DashboardList'
 import Axios from 'axios'
 
-const apiURI = "http://localhost:8000"
+const apiURI = "http://localhost:8080"
 
 export default class Dashboard extends Component {
     constructor(props) {

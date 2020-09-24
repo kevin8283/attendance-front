@@ -19,7 +19,7 @@ export default class DashboardList extends Component {
                             <td className="attendance-th">Arrival time</td>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className = "dashboard-tbody">
                         {
                             this.props.histories.map((item, index) => {
                                 return (

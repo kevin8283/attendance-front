@@ -5,7 +5,7 @@ import axios from 'axios'
 import AttendancesList from './AttendancesList'
 import CreateAttendance from './CreateAttendance'
 
-const apiURI = "http://localhost:8000"
+const apiURI = "http://localhost:8080"
 
 export default class Attendances extends Component {
 

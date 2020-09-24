@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Axios from 'axios'
 
-const apiURI = "http://localhost:8000"
+const apiURI = "http://localhost:8080"
 
 export default function Sidebar({history}) {
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { motion } from 'framer-motion'
 import axios from 'axios'
 
-const apiURI = "http://localhost:8000"
+const apiURI = "http://localhost:8080"
 
 export default class AddCourse extends Component {
     constructor(props) {

@@ -5,7 +5,7 @@ import CoursesList from './CoursesList'
 import AddCourse from './AddCourse'
 import axios from 'axios'
 
-const apiURI = "http://localhost:8000"
+const apiURI = "http://localhost:8080"
 
 export default class Courses extends Component {
 
