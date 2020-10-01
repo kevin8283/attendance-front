@@ -32,7 +32,6 @@ export default class Attendances extends Component {
         })
     }
     
-
     render() {
         return (
             <div className = "component-container">
@@ -60,7 +59,7 @@ export default class Attendances extends Component {
                         </ul>
                     </motion.nav>
                     <Switch>
-                        <Route path = "/dashboard/attendances" exact render = {() => <AttendancesList attendances = {this.state.attendances}/>}/>
+                        <Route path = "/dashboard/attendances" exact render = {() => <AttendancesList attendances = {this.state.attendances} history = {this.props.history}/>}/>
                         <Route path = "/dashboard/attendances/add" component = {CreateAttendance} />
                     </Switch>
                 </main>

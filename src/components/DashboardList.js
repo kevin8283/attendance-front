@@ -17,6 +17,7 @@ export default class DashboardList extends Component {
                             <td className="attendance-th">Card UID</td>
                             <td className="attendance-th">Course</td>
                             <td className="attendance-th">Arrival time</td>
+                            <td className="attendance-th">Date</td>
                         </tr>
                     </thead>
                     <tbody className = "dashboard-tbody">
@@ -32,6 +33,7 @@ export default class DashboardList extends Component {
                                         </td>
                                         <td className="attendance-td student-course">{item.course}</td>
                                         <td className="attendance-td student-arrival-time">{new Date(item.date).toLocaleTimeString()}</td>
+                                        <td className="attendance-td student-arrival-time">{new Date(item.date).toLocaleDateString()}</td>
                                     </tr>
                                 )
                             })

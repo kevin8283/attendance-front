@@ -366,6 +366,10 @@ body {
 .create-attendance-option {
     padding: 2.5vh;
 }
+.delete-attendance-link {
+    color: #d81031;
+    cursor: pointer;
+}
 
 /* Scrollbars */
 

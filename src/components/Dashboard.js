@@ -13,6 +13,7 @@ export default class Dashboard extends Component {
             history: []
         }
     }
+
     componentDidMount() {
         Axios.get(`${apiURI}/history`, {withCredentials: true})
         .then(response => {
