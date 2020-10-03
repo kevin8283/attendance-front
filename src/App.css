@@ -35,6 +35,7 @@ body {
     color: #3b7be9;
 }
 .nav-links {
+    padding: 0;
     flex: 4;
     display: flex;
     flex-direction: column;
@@ -43,8 +44,9 @@ body {
     list-style-type: none;
 }
 .nav-link {
-    margin: 3vh 0vh 3vh 0vh;
-    padding: 1.5vh;
+    display: flex;
+    align-items: center;
+    margin: 4vh 0vh 4vh 2.5vh;
     width: 85%;
 }
 .link {
@@ -76,6 +78,11 @@ body {
     border-radius: 1vh;
     background-color: transparent;
     color: #fdfdfd;
+}
+.icon {
+    width: 5vh;
+    height: 5vh;
+    margin-right: 2vw;
 }
 
 /* Common components */
@@ -242,6 +249,7 @@ body {
     margin-right: 2.5vw;
 }
 .course-edit-link {
+    cursor: pointer;
     color: #285db9;
     text-decoration: none;
 }

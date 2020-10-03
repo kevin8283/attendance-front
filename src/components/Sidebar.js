@@ -2,6 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Axios from 'axios'
+import DashboardIcon from '../icons/ic_dashboard_white_48dp.png'
+import CoursesIcon from '../icons/ic_code_white_48dp.png'
+import StudentsIcon from '../icons/ic_supervisor_account_white_48dp.png'
+import AttendancesIcon from '../icons/ic_view_list_white_48dp.png'
 
 const apiURI = "http://localhost:8080"
 
@@ -43,19 +47,23 @@ export default function Sidebar({history}) {
     const links = [
         {
             title: "Dashboard",
-            url: "/dashboard"
+            url: "/dashboard",
+            icon: DashboardIcon
         },
         {
             title: "Courses",
-            url: "/dashboard/courses"
+            url: "/dashboard/courses",
+            icon: CoursesIcon
         },
         {
             title: "Students",
-            url: "/dashboard/students"
+            url: "/dashboard/students",
+            icon: StudentsIcon
         },
         {
             title: "Attendances",
-            url: "/dashboard/attendances"
+            url: "/dashboard/attendances",
+            icon: AttendancesIcon
         }
     ]
 
@@ -82,6 +90,7 @@ export default function Sidebar({history}) {
                 whileHover = "hover"
                 key = {index}
             >
+                <img src={item.icon} alt="icon" className="icon"/>
                 <Link className="link" to = {item.url}>{item.title}</Link>
             </motion.li>
             )
