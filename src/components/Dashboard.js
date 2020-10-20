@@ -10,11 +10,12 @@ export default class Dashboard extends Component {
         super(props)
 
         this.state = {
-            history: []
+            history: [],
+            counter: 0
         }
     }
 
-    componentDidMount() {
+    getHistory() {
         Axios.get(`${apiURI}/history`, {withCredentials: true})
         .then(response => {
             this.setState({
@@ -23,6 +24,14 @@ export default class Dashboard extends Component {
         })
         .catch(error => {
             console.log(error)
+        })
+    }
+
+    componentDidMount() {
+        this.getHistory()
+
+        this.props.socket.on("new-student", () => {
+            this.getHistory()
         })
     }
     
@@ -37,9 +46,12 @@ export default class Dashboard extends Component {
                     <h2 className="component-title">Dashboard</h2>
                     <p className="component-subtitle">View the current attendance lists, and the latest updates</p>
                 </motion.header>
-                <main className="dashboard-main">
-                    <DashboardList histories = {this.state.history}/>
-                </main>
+                {
+                    (this.state.history.length > 0) && 
+                    (<main className="dashboard-main">
+                        <DashboardList histories = {this.state.history}/>
+                    </main>)  
+                }
             </div>
         )
     }
